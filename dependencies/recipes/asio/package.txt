@@ -1,0 +1,1 @@
+https://downloads.sourceforge.net/project/asio/asio/1.19.0%20(Development)/asio-1.19.0.tar.gz -H sha256:ff186ce11759604d9e24c01a71974b766b339e4a5bb9bc900da4f4855cbb3101 -X build.cmake

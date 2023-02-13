@@ -1,0 +1,1 @@
+leethomason/tinyxml2@6.0.0 -H sha256:9444ba6322267110b4aca61cbe37d5dcab040344b5c97d0b36c119aa61319b0f -X build.cmake

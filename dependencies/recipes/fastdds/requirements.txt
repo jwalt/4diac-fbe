@@ -1,0 +1,4 @@
+fastcdr
+foonathan
+asio
+tinyxml2
