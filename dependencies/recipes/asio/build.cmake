@@ -13,3 +13,6 @@ install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/include/asio.hpp DESTINATION include)
 install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/include/asio DESTINATION include)
 
 include(autotools-build)
+
+patch(include/asio/ssl/impl/context.ipp "LIBRESSL_VERSION_NUMBER" "LIBRESSL_VERSION_NUMBER_INVALID")
+
