@@ -1,0 +1,1 @@
+opencv/opencv@3.4.5 -X build.cmake -H sha256:0c57d9dd6d30cbffe68a09b03f4bebe773ee44dc8ff5cd6eaeb7f4d5ef3b428e
