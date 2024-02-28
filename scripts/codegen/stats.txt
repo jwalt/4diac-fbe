@@ -1,0 +1,27 @@
+@require(all, val, ros_sym)
+this is system @val("@Name")
+
+It has apps:
+@for app in all("Application"):
+	@val("@Name", app) with @val("count(.//FB)", app) function blocks
+@end
+
+Known blocks:
+@for type in all("FBType|SubAppType"):
+ @val("@Name", type),\
+@end
+
+
+Known adapters:
+@for type in all("AdapterType"):
+ @val("@Name", type),\
+@end
+
+
+Known structs:
+@for type in all("DataType"):
+ @val("@Name", type),\
+@end
+
+ROS Name test:
+ @ros_sym("std_msgs__Vec3")
