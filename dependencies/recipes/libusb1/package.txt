@@ -1,0 +1,1 @@
+libusb/libusb@v1.0.22 -H sha256:3500f7b182750cd9ccf9be8b1df998f83df56a39ab264976bdb3307773e16f48 -X build.cmake

@@ -1,0 +1,7 @@
+zlib
+bzip2
+libftdi
+libusb1
+libusb-compat-0.1
+gnugsl
+libudev

@@ -1,0 +1,1 @@
+libusb/libusb-compat-0.1@v0.1.7 -H sha256:d9ca58ec05ba5a29646a7549b9c2c02475a7ed86637337a4ee35b5d559de6e0d -X build.cmake

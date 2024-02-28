@@ -1,0 +1,1 @@
+baugp/libcan@6cdfbd1b3218285dd60b338bfc2fa2288998e126 -X build.cmake -H sha256:021924edc3b6ec012d515e2e28a4c51ecbc5dabeceaacf73d240f93b8ad4f3ea
