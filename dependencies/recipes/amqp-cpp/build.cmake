@@ -1,0 +1,6 @@
+PROJECT(amqp-cpp CXX C)
+cmake_minimum_required(VERSION 2.8)
+
+set(AMQP-CPP_LINUX_TCP ON CACHE BOOL "" FORCE)
+
+include(${CGET_CMAKE_ORIGINAL_SOURCE_FILE})
