@@ -1,0 +1,11 @@
+forte_add_module(ROS2 OFF "ROS2 data types")
+if (FORTE_MODULE_ROS2)
+  add_subdirectory("action_msgs")
+  add_subdirectory("builtin_interfaces")
+  add_subdirectory("example_interfaces")
+  add_subdirectory("std_msgs")
+  add_subdirectory("turtlesim")
+  add_subdirectory("unique_identifier_msgs")
+  
+  forte_add_include_directories(${CMAKE_CURRENT_SOURCE_DIR})
+endif()

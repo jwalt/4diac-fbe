@@ -1,0 +1,15 @@
+forte_add_sourcefile_hcpp(
+  # action
+  action/RotateAbsolute/ROS2_turtlesim__action__RotateAbsolute__Feedback_dtp
+  action/RotateAbsolute/ROS2_turtlesim__action__RotateAbsolute__FeedbackMessage_dtp
+  action/RotateAbsolute/ROS2_turtlesim__action__RotateAbsolute__GetResult__Request_dtp
+  action/RotateAbsolute/ROS2_turtlesim__action__RotateAbsolute__GetResult__Response_dtp
+  action/RotateAbsolute/ROS2_turtlesim__action__RotateAbsolute__Goal_dtp
+  action/RotateAbsolute/ROS2_turtlesim__action__RotateAbsolute__Result_dtp
+  action/RotateAbsolute/ROS2_turtlesim__action__RotateAbsolute__SendGoal__Request_dtp
+  action/RotateAbsolute/ROS2_turtlesim__action__RotateAbsolute__SendGoal__Response_dtp
+
+  # srv
+  srv/Spawn/ROS2_turtlesim__srv__Spawn__Request_dtp
+  srv/Spawn/ROS2_turtlesim__srv__Spawn__Response_dtp
+)

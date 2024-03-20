@@ -1,0 +1,2 @@
+forte_add_sourcefile_hcpp(srv/AddTwoInts/ROS2_example_interfaces__srv__AddTwoInts__Request_dtp)
+forte_add_sourcefile_hcpp(srv/AddTwoInts/ROS2_example_interfaces__srv__AddTwoInts__Response_dtp)
