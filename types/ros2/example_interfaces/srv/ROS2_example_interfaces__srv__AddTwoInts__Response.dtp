@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataType Name="ROS2_example_interfaces__srv__AddTwoInts__Response" Comment="">
+	<Identification>
+	</Identification>
+	<VersionInfo Version="1.0" Author="Tim Hesse" Date="2023-03-15">
+	</VersionInfo>
+	<StructuredType>
+		<VarDeclaration Name="sum" Type="LINT" Comment=""/>
+	</StructuredType>
+</DataType>

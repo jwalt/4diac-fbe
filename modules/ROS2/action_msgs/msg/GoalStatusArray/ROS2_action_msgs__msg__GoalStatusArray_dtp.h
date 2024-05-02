@@ -6,7 +6,7 @@
  *** Name: ROS2_action_msgs__msg__GoalStatusArray
  *** Description:
  *** Version:
- ***     1.0: 2023-04-05/Tim Hesse -  -
+ ***     1.0: 2023-04-05/ -  -
  *************************************************************************/
 
 #pragma once

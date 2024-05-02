@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataType Name="ROS2_example_message__msg__DebugString" Comment="A DebugString datatype">
+	<Identification>
+	</Identification>
+	<VersionInfo Version="1.0" Author="lcl_mgrave" Date="2024-04-18">
+	</VersionInfo>
+	<CompilerInfo>
+	</CompilerInfo>
+	<StructuredType>
+		<VarDeclaration Name="data" Type="STRING" Comment=""/>
+	</StructuredType>
+	<Attribute Name="data" Type="STRING" Value="''"/>
+</DataType>

@@ -6,7 +6,7 @@
  *** Name: ROS2_example_interfaces__srv__AddTwoInts__Response
  *** Description:
  *** Version:
- ***     1.0: 2023-03-15/Tim Hesse -  -
+ ***     1.0: 2023-03-15/ -  -
  *************************************************************************/
 
 #include "ROS2_example_interfaces__srv__AddTwoInts__Response_dtp.h"

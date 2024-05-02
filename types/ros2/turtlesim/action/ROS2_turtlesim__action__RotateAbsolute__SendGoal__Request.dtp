@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataType Name="ROS2_turtlesim__action__RotateAbsolute__SendGoal__Request" Comment="">
+	<Identification>
+	</Identification>
+	<VersionInfo Version="1.0" Author="Tim Hesse" Date="2023-03-23">
+	</VersionInfo>
+	<StructuredType>
+		<VarDeclaration Name="goal_id" Type="ROS2_unique_identifier_msgs__msg__UUID" Comment=""/>
+		<VarDeclaration Name="goal" Type="ROS2_turtlesim__action__RotateAbsolute__Goal" Comment=""/>
+	</StructuredType>
+</DataType>

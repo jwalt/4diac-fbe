@@ -6,7 +6,7 @@
  *** Name: ROS2_turtlesim__action__RotateAbsolute__FeedbackMessage
  *** Description: 
  *** Version:
-***     1.0: 2023-03-23/Tim Hesse -  - 
+***     1.0: 2023-03-23/ -  - 
  *************************************************************************/
 
 #ifndef _ROS2_TURTLESIM__ACTION__ROTATEABSOLUTE__FEEDBACKMESSAGE_H_

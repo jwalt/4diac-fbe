@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<System Name="ros2_demo_listen" Comment="">
+	<VersionInfo Version="1.0" Author="lcl_mgrave" Date="2024-03-12">
+	</VersionInfo>
+	<CompilerInfo>
+		<Import declaration="ros2::example_message::msg::ROS2_example_message__msg__DebugString"/>
+	</CompilerInfo>
+	<Application Name="rls2_demo_listenApp" Comment="">
+		<SubAppNetwork>
+			<FB Name="SUB_RES" Type="SUBSCRIBE_1" Comment="" x="2470.59" y="823.53">
+				<Parameter Name="QI" Value="1" Comment=""/>
+				<Parameter Name="ID" Value="&quot;dds[rt/chatter:example_message::msg::StringDebug]&quot;" Comment=""/>
+			</FB>
+			<FB Name="E_CYCLE" Type="E_CYCLE" Comment="" x="352.94" y="941.18">
+				<Parameter Name="DT" Value="T#10s" Comment=""/>
+			</FB>
+			<FB Name="OUT_ANY_CONSOLE" Type="OUT_ANY_CONSOLE" Comment="" x="5882.35" y="588.24">
+				<Parameter Name="QI" Value="1" Comment=""/>
+				<Parameter Name="LABEL" Value="'msg'" Comment=""/>
+			</FB>
+			<FB Name="STRUCT_DEMUX" Type="STRUCT_DEMUX" Comment="" x="3529.41" y="705.88">
+				<Attribute Name="StructuredType" Type="STRING" Value="ROS2_example_message__msg__DebugString"/>
+				<Attribute Name="VisibleChildren" Type="STRING" Value="data"/>
+			</FB>
+			<EventConnections>
+				<Connection Source="E_CYCLE.EO" Destination="SUB_RES.RSP" Comment="" dx1="770.5882352941176"/>
+				<Connection Source="SUB_RES.INITO" Destination="E_CYCLE.START" Comment="" dx1="70.58823529411764" dx2="70.58823529411764" dy="-335.2941176470588"/>
+				<Connection Source="SUB_RES.IND" Destination="STRUCT_DEMUX.REQ" Comment="" dx1="147.05882352941177"/>
+				<Connection Source="STRUCT_DEMUX.CNF" Destination="OUT_ANY_CONSOLE.REQ" Comment="" dx1="152.94117647058823"/>
+			</EventConnections>
+			<DataConnections>
+				<Connection Source="SUB_RES.RD_1" Destination="STRUCT_DEMUX.IN" Comment="" dx1="147.05882352941177"/>
+				<Connection Source="STRUCT_DEMUX.data" Destination="OUT_ANY_CONSOLE.IN" Comment="" dx1="152.94117647058823"/>
+			</DataConnections>
+		</SubAppNetwork>
+	</Application>
+	<Device Name="FORTE_PC" Type="FORTE_PC" Comment="" x="3005.88" y="1641.18">
+		<Parameter Name="MGR_ID" Value="&quot;localhost:61498&quot;" Comment="Device manager socket ID"/>
+		<Attribute Name="Profile" Type="STRING" Value="HOLOBLOC"/>
+		<Attribute Name="Color" Type="STRING" Value="255,190,111"/>
+		<Resource Name="EMB_RES" Type="EMB_RES" Comment="" x="0" y="0">
+			<FBNetwork>
+				<FB Name="rls2_demo_listenApp.E_CYCLE" Type="E_CYCLE" Comment="" x="823.53" y="941.18">
+					<Parameter Name="DT" Value="T#10s" Comment=""/>
+				</FB>
+				<FB Name="rls2_demo_listenApp.SUB_RES" Type="SUBSCRIBE_1" Comment="" x="2352.94" y="823.53">
+					<Parameter Name="QI" Value="1" Comment=""/>
+					<Parameter Name="ID" Value="&quot;dds[rt/chatter:example_message::msg::StringDebug]&quot;" Comment=""/>
+				</FB>
+				<FB Name="rls2_demo_listenApp.OUT_ANY_CONSOLE" Type="OUT_ANY_CONSOLE" Comment="" x="5800" y="394.12">
+					<Parameter Name="QI" Value="1" Comment=""/>
+					<Parameter Name="LABEL" Value="'msg'" Comment=""/>
+				</FB>
+				<FB Name="rls2_demo_listenApp.STRUCT_DEMUX" Type="STRUCT_DEMUX" Comment="" x="3764.71" y="705.88">
+					<Attribute Name="StructuredType" Type="STRING" Value="ROS2_example_message__msg__DebugString"/>
+					<Attribute Name="VisibleChildren" Type="STRING" Value="data"/>
+				</FB>
+				<EventConnections>
+					<Connection Source="rls2_demo_listenApp.E_CYCLE.EO" Destination="rls2_demo_listenApp.SUB_RES.RSP" Comment="" dx1="476.4705882352941"/>
+					<Connection Source="START.COLD" Destination="rls2_demo_listenApp.SUB_RES.INIT" Comment="" dx1="788.235294117647"/>
+					<Connection Source="START.WARM" Destination="rls2_demo_listenApp.SUB_RES.INIT" Comment="" dx1="788.235294117647"/>
+					<Connection Source="rls2_demo_listenApp.SUB_RES.INITO" Destination="rls2_demo_listenApp.E_CYCLE.START" Comment="" dx1="70.58823529411764" dx2="70.58823529411764" dy="-447.0588235294117"/>
+					<Connection Source="rls2_demo_listenApp.SUB_RES.IND" Destination="rls2_demo_listenApp.STRUCT_DEMUX.REQ" Comment=""/>
+					<Connection Source="rls2_demo_listenApp.STRUCT_DEMUX.CNF" Destination="rls2_demo_listenApp.OUT_ANY_CONSOLE.REQ" Comment=""/>
+				</EventConnections>
+				<DataConnections>
+					<Connection Source="rls2_demo_listenApp.SUB_RES.RD_1" Destination="rls2_demo_listenApp.STRUCT_DEMUX.IN" Comment=""/>
+					<Connection Source="rls2_demo_listenApp.STRUCT_DEMUX.data" Destination="rls2_demo_listenApp.OUT_ANY_CONSOLE.IN" Comment=""/>
+				</DataConnections>
+			</FBNetwork>
+		</Resource>
+	</Device>
+	<Mapping From="rls2_demo_listenApp.E_CYCLE" To="FORTE_PC.EMB_RES"/>
+	<Mapping From="rls2_demo_listenApp.SUB_RES" To="FORTE_PC.EMB_RES"/>
+	<Mapping From="rls2_demo_listenApp.OUT_ANY_CONSOLE" To="FORTE_PC.EMB_RES"/>
+	<Mapping From="rls2_demo_listenApp.STRUCT_DEMUX" To="FORTE_PC.EMB_RES"/>
+</System>

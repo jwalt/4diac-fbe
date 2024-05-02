@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataType Name="ROS2_std_msgs__msg__String" Comment="Primitive Type: String">
+	<Identification>
+	</Identification>
+	<StructuredType>
+		<VarDeclaration Name="data" Type="STRING" Comment=""/>
+	</StructuredType>
+</DataType>

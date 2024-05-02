@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataType Name="ROS2_turtlesim__srv__Spawn__Request" Comment="turtlesim/srv/Spawn_Request">
+	<Identification>
+	</Identification>
+	<VersionInfo Version="1.0" Author="Tim Hesse" Date="2023-03-14">
+	</VersionInfo>
+	<StructuredType>
+		<VarDeclaration Name="x" Type="REAL" Comment=""/>
+		<VarDeclaration Name="y" Type="REAL" Comment=""/>
+		<VarDeclaration Name="theta" Type="REAL" Comment=""/>
+		<VarDeclaration Name="name" Type="STRING" Comment="" InitialValue="''"/>
+	</StructuredType>
+</DataType>

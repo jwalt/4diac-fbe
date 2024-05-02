@@ -23,6 +23,7 @@ DEPS=fastcdr
 DEPS=fastdds
 DEPS=tinyxml2
 DEPS=foonathan
+DEPS=boost
 
 // address sanitizer doesn't work with static linking
 TOOLCHAIN_EXTRA_C_FLAGS=-fno-sanitize=address -fno-lto
@@ -38,5 +39,4 @@ MODULE=RECONFIGURATION
 MODULE=RT_Events
 MODULE=UTILS
 
-// no local additions
-FORTE_EXTERNAL_MODULES_DIRECTORY=/nonexistant
+FORTE_EXTERNAL_MODULES_DIRECTORY=${BASEDIR}/modules

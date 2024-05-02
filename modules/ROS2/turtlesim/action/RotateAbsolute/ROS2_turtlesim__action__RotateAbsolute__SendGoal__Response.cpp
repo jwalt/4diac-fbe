@@ -6,7 +6,7 @@
  *** Name: ROS2_turtlesim__action__RotateAbsolute__SendGoal__Response
  *** Description: 
  *** Version:
-***     1.0: 2023-03-23/Tim Hesse -  - 
+***     1.0: 2023-03-23/ -  - 
  *************************************************************************/
 
 #include "ROS2_turtlesim__action__RotateAbsolute__SendGoal__Response.h"

@@ -1,1 +1,1 @@
-eProsima/Fast-DDS@v2.9.1 -H sha256:17fc8547adfbf83a7abc46865b95e6e353d434ecbdf6e48a759e287ccebd379f -X build.cmake
+eProsima/Fast-DDS@v2.3.6 -H sha256:142fb9feca4ce52449d70fa39d0810936ab7275ea177f135e6c430745511761c -X build.cmake

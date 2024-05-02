@@ -6,7 +6,7 @@
  *** Name: ROS2_action_msgs__msg__GoalInfo
  *** Description:
  *** Version:
- ***     1.0: 2023-03-15/Tim Hesse -  -
+ ***     1.0: 2023-03-15/ -  -
  *************************************************************************/
 
 #include "ROS2_action_msgs__msg__GoalInfo_dtp.h"

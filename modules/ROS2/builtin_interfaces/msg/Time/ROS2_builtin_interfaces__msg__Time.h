@@ -6,7 +6,7 @@
  *** Name: ROS2_builtin_interfaces__msg__Time
  *** Description: 
  *** Version:
-***     1.0: 2023-03-15/Tim Hesse -  - 
+***     1.0: 2023-03-15/ -  - 
  *************************************************************************/
 
 #ifndef _ROS2_BUILTIN_INTERFACES__MSG__TIME_H_

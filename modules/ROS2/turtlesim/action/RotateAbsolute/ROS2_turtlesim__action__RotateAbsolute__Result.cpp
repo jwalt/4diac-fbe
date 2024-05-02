@@ -6,7 +6,7 @@
  *** Name: ROS2_turtlesim__action__RotateAbsolute__Result
  *** Description: 
  *** Version:
-***     1.0: 2023-03-21/Tim Hesse -  - 
+***     1.0: 2023-03-21/ -  - 
  *************************************************************************/
 
 #include "ROS2_turtlesim__action__RotateAbsolute__Result.h"

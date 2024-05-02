@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataType Name="ROS2_example_interface__msg__DebugString" Comment="A Template for a Data Type">
+	<Identification>
+	</Identification>
+	<VersionInfo Version="1.0" Author="lcl_mgrave" Date="2024-03-20">
+	</VersionInfo>
+	<CompilerInfo packageName="ros2::example_interfaces::msg">
+	</CompilerInfo>
+	<StructuredType>
+		<VarDeclaration Name="data" Type="STRING" Comment=""/>
+	</StructuredType>
+</DataType>

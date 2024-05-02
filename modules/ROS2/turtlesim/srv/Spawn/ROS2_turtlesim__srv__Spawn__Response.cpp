@@ -6,7 +6,7 @@
  *** Name: ROS2_turtlesim__srv__Spawn__Response
  *** Description: turtlesim/srv/Spawn_Response
  *** Version:
-***     1.0: 2023-03-14/Tim Hesse -  - 
+***     1.0: 2023-03-14/ -  - 
  *************************************************************************/
 
 #include "ROS2_turtlesim__srv__Spawn__Response.h"

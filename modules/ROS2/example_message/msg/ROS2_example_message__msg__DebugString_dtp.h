@@ -3,9 +3,10 @@
  ***
  *** This file was generated using the 4DIAC FORTE Export Filter V1.0.x NG!
  ***
- *** Name: ROS2_std_msgs__msg__String
- *** Description: Primitive Type: String
+ *** Name: ROS2_example_message__msg__DebugString
+ *** Description: A Template for a Data Type
  *** Version:
+ ***     1.0: 2024-04-18/ -  -
  *************************************************************************/
 
 #pragma once
@@ -20,13 +21,13 @@
 #include "forte_array_variable.h"
 
 
-class CIEC_ROS2_std_msgs__msg__String final : public CIEC_STRUCT {
-  DECLARE_FIRMWARE_DATATYPE(ROS2_std_msgs__msg__String)
+class CIEC_ROS2_example_message__msg__DebugString final : public CIEC_STRUCT {
+  DECLARE_FIRMWARE_DATATYPE(ROS2_example_message__msg__DebugString)
 
   public:
-    CIEC_ROS2_std_msgs__msg__String();
+    CIEC_ROS2_example_message__msg__DebugString();
 
-    CIEC_ROS2_std_msgs__msg__String(const CIEC_STRING &padata);
+    CIEC_ROS2_example_message__msg__DebugString(const CIEC_STRING &padata);
 
     CIEC_STRING var_data;
 

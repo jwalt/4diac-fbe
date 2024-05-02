@@ -6,7 +6,7 @@
  *** Name: ROS2_action_msgs__srv__CancelGoal__Response
  *** Description:
  *** Version:
- ***     1.0: 2023-03-15/Tim Hesse -  -
+ ***     1.0: 2023-03-15/ -  -
  *************************************************************************/
 
 #pragma once

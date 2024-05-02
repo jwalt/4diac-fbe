@@ -6,7 +6,7 @@
  *** Name: ROS2_unique_identifier_msgs__msg__UUID
  *** Description:
  *** Version:
- ***     1.0: 2023-03-15/Tim Hesse -  -
+ ***     1.0: 2023-03-15/ -  -
  *************************************************************************/
 
 #pragma once
