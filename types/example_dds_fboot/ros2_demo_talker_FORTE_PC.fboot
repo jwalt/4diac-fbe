@@ -1,0 +1,20 @@
+;<Request ID="2" Action="CREATE"><FB Name="EMB_RES" Type="EMB_RES" /></Request>
+EMB_RES;<Request ID="3" Action="CREATE"><FB Name="ros2_demo_talkerApp.E_CYCLE" Type="E_CYCLE" /></Request>
+EMB_RES;<Request ID="4" Action="WRITE"><Connection Source="T#10s" Destination="ros2_demo_talkerApp.E_CYCLE.DT" /></Request>
+EMB_RES;<Request ID="5" Action="CREATE"><FB Name="ros2_demo_talkerApp.OUT_ANY_CONSOLE" Type="OUT_ANY_CONSOLE" /></Request>
+EMB_RES;<Request ID="6" Action="WRITE"><Connection Source="TRUE" Destination="ros2_demo_talkerApp.OUT_ANY_CONSOLE.QI" /></Request>
+EMB_RES;<Request ID="7" Action="WRITE"><Connection Source="&apos;msg&apos;" Destination="ros2_demo_talkerApp.OUT_ANY_CONSOLE.LABEL" /></Request>
+EMB_RES;<Request ID="8" Action="CREATE"><FB Name="PUBLISH_1" Type="PUBLISH_1" /></Request>
+EMB_RES;<Request ID="9" Action="WRITE"><Connection Source="TRUE" Destination="PUBLISH_1.QI" /></Request>
+EMB_RES;<Request ID="10" Action="WRITE"><Connection Source="&quot;dds[rt/chatter:example_message::msg::StringDebug]&quot;" Destination="PUBLISH_1.ID" /></Request>
+EMB_RES;<Request ID="11" Action="CREATE"><FB Name="ros2_demo_talkerApp.STRUCT_MUX" Type="STRUCT_MUX_1ROS2_example_message__msg__DebugString" /></Request>
+EMB_RES;<Request ID="12" Action="WRITE"><Connection Source="&apos;message from 4diac&apos;" Destination="ros2_demo_talkerApp.STRUCT_MUX.data" /></Request>
+EMB_RES;<Request ID="13" Action="CREATE"><Connection Source="START.COLD" Destination="PUBLISH_1.INIT" /></Request>
+EMB_RES;<Request ID="14" Action="CREATE"><Connection Source="START.WARM" Destination="PUBLISH_1.INIT" /></Request>
+EMB_RES;<Request ID="15" Action="CREATE"><Connection Source="PUBLISH_1.INITO" Destination="ros2_demo_talkerApp.E_CYCLE.START" /></Request>
+EMB_RES;<Request ID="16" Action="CREATE"><Connection Source="ros2_demo_talkerApp.E_CYCLE.EO" Destination="ros2_demo_talkerApp.STRUCT_MUX.REQ" /></Request>
+EMB_RES;<Request ID="17" Action="CREATE"><Connection Source="ros2_demo_talkerApp.STRUCT_MUX.CNF" Destination="ros2_demo_talkerApp.OUT_ANY_CONSOLE.REQ" /></Request>
+EMB_RES;<Request ID="18" Action="CREATE"><Connection Source="ros2_demo_talkerApp.STRUCT_MUX.CNF" Destination="PUBLISH_1.REQ" /></Request>
+EMB_RES;<Request ID="19" Action="CREATE"><Connection Source="ros2_demo_talkerApp.STRUCT_MUX.OUT" Destination="ros2_demo_talkerApp.OUT_ANY_CONSOLE.IN" /></Request>
+EMB_RES;<Request ID="20" Action="CREATE"><Connection Source="ros2_demo_talkerApp.STRUCT_MUX.OUT" Destination="PUBLISH_1.SD_1" /></Request>
+EMB_RES;<Request ID="20" Action="START"/>

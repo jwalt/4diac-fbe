@@ -1,0 +1,19 @@
+;<Request ID="2" Action="CREATE"><FB Name="EMB_RES" Type="EMB_RES" /></Request>
+EMB_RES;<Request ID="3" Action="CREATE"><FB Name="rls2_demo_listenApp.E_CYCLE" Type="E_CYCLE" /></Request>
+EMB_RES;<Request ID="4" Action="WRITE"><Connection Source="T#10s" Destination="rls2_demo_listenApp.E_CYCLE.DT" /></Request>
+EMB_RES;<Request ID="5" Action="CREATE"><FB Name="rls2_demo_listenApp.SUB_RES" Type="SUBSCRIBE_1" /></Request>
+EMB_RES;<Request ID="6" Action="WRITE"><Connection Source="TRUE" Destination="rls2_demo_listenApp.SUB_RES.QI" /></Request>
+EMB_RES;<Request ID="7" Action="WRITE"><Connection Source="&quot;dds[rt/chatter:example_message::msg::StringDebug]&quot;" Destination="rls2_demo_listenApp.SUB_RES.ID" /></Request>
+EMB_RES;<Request ID="8" Action="CREATE"><FB Name="rls2_demo_listenApp.OUT_ANY_CONSOLE" Type="OUT_ANY_CONSOLE" /></Request>
+EMB_RES;<Request ID="9" Action="WRITE"><Connection Source="TRUE" Destination="rls2_demo_listenApp.OUT_ANY_CONSOLE.QI" /></Request>
+EMB_RES;<Request ID="10" Action="WRITE"><Connection Source="&apos;msg&apos;" Destination="rls2_demo_listenApp.OUT_ANY_CONSOLE.LABEL" /></Request>
+EMB_RES;<Request ID="11" Action="CREATE"><FB Name="rls2_demo_listenApp.STRUCT_DEMUX" Type="STRUCT_DEMUX_1ROS2_example_message__msg__DebugString" /></Request>
+EMB_RES;<Request ID="12" Action="CREATE"><Connection Source="rls2_demo_listenApp.E_CYCLE.EO" Destination="rls2_demo_listenApp.SUB_RES.RSP" /></Request>
+EMB_RES;<Request ID="13" Action="CREATE"><Connection Source="START.COLD" Destination="rls2_demo_listenApp.SUB_RES.INIT" /></Request>
+EMB_RES;<Request ID="14" Action="CREATE"><Connection Source="START.WARM" Destination="rls2_demo_listenApp.SUB_RES.INIT" /></Request>
+EMB_RES;<Request ID="15" Action="CREATE"><Connection Source="rls2_demo_listenApp.SUB_RES.INITO" Destination="rls2_demo_listenApp.E_CYCLE.START" /></Request>
+EMB_RES;<Request ID="16" Action="CREATE"><Connection Source="rls2_demo_listenApp.SUB_RES.IND" Destination="rls2_demo_listenApp.STRUCT_DEMUX.REQ" /></Request>
+EMB_RES;<Request ID="17" Action="CREATE"><Connection Source="rls2_demo_listenApp.STRUCT_DEMUX.CNF" Destination="rls2_demo_listenApp.OUT_ANY_CONSOLE.REQ" /></Request>
+EMB_RES;<Request ID="18" Action="CREATE"><Connection Source="rls2_demo_listenApp.SUB_RES.RD_1" Destination="rls2_demo_listenApp.STRUCT_DEMUX.IN" /></Request>
+EMB_RES;<Request ID="19" Action="CREATE"><Connection Source="rls2_demo_listenApp.STRUCT_DEMUX.data" Destination="rls2_demo_listenApp.OUT_ANY_CONSOLE.IN" /></Request>
+EMB_RES;<Request ID="19" Action="START"/>
