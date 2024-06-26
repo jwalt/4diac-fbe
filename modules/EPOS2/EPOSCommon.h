@@ -26,35 +26,35 @@ extern void dumpPos(uint8_t node);
 extern void emergencyAbort();
 
 #define handleINIT() do {                                   \
-    if (QI()) {                                             \
-        auto err = initDevice(NODE());                      \
+    if (var_QI) {                                           \
+        auto err = initDevice(var_NODE);                    \
         if (err) {                                          \
-            QO() = CIEC_BOOL(false);                        \
-            STATUS() = CIEC_WSTRING(err);                    \
+            var_QO = CIEC_BOOL(false);                      \
+            var_STATUS = CIEC_WSTRING(err);                 \
         } else {                                            \
-            QO() = CIEC_BOOL(true);                         \
-            STATUS() = CIEC_WSTRING("Initialised successfully");          \
+            var_QO = CIEC_BOOL(true);                       \
+            var_STATUS = CIEC_WSTRING("Initialised successfully");          \
         }                                                   \
     } else {                                                \
-        if (QO()) {                                         \
-            auto err = deinitDevice(NODE());                \
-            if (err) STATUS() = CIEC_WSTRING(err);           \
-            else STATUS() = CIEC_WSTRING("Deinitialised successfully");   \
+        if (var_QO) {                                         \
+            auto err = deinitDevice(var_NODE);              \
+            if (err) var_STATUS = CIEC_WSTRING(err);        \
+            else var_STATUS = CIEC_WSTRING("Deinitialised successfully");   \
         }                                                   \
-        QO() = CIEC_BOOL(false);                            \
+        var_QO = CIEC_BOOL(false);                          \
     }                                                       \
-    sendOutputEvent(scm_nEventINITOID);                     \
+    sendOutputEvent(scmEventINITOID, paECET);               \
     } while (false)
 
 
 #define handleREQ(lambda) do {                  \
-    if (QI() && QO()) {                         \
+    if (var_QI && var_QO) {                     \
         const char *handleREQ_err = (lambda)(); \
         if (handleREQ_err) {                    \
-            STATUS() = CIEC_WSTRING(handleREQ_err);           \
-            deinitDevice(NODE());               \
-            QO() = CIEC_BOOL(false);            \
+            var_STATUS = CIEC_WSTRING(handleREQ_err);           \
+            deinitDevice(var_NODE);             \
+            var_QO = CIEC_BOOL(false);          \
         }                                       \
     }                                           \
-    sendOutputEvent(scm_nEventCNFID);           \
+    sendOutputEvent(scmEventCNFID, paECET);     \
     } while (false)

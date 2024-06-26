@@ -1,5 +1,5 @@
 #include "EPOSCommon.h"
-#include "../../org.eclipse.4diac.forte/src/arch/devlog.h"
+#include "../../forte/src/arch/devlog.h"
 #include <string>
 #include <mutex>
 #include <cstring>

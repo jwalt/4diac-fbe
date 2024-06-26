@@ -1,9 +1,11 @@
+#ifdef TEST_STANDALONE
+
 #undef LOGDEBUG
 #define LOGDEBUG
 #undef NOLOG
 
 #include "EPOSCommon.h"
-#include "../../org.eclipse.4diac.forte/src/arch/devlog.h"
+#include "../../forte/src/arch/devlog.h"
 #include <cstdio>
 #include <string>
 #include <cstdarg>
@@ -21,7 +23,7 @@ void logMessage(E_MsgLevel paLevel, const char *pacMessage, ...) {
     va_list args;
     va_start(args, pacMessage);
 
-    fprintf(stderr, "LOG%i: ", paLevel);
+    fprintf(stderr, "LOG%i: ", int(paLevel));
     vfprintf(stderr, pacMessage, args);
     fflush(stderr);
     va_end(args);
@@ -123,3 +125,4 @@ int main(int argc, char *argv[]) {
 
 #include "EPOSCommon.cpp"
 
+#endif
