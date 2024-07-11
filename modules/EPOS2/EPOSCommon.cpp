@@ -449,6 +449,12 @@ const char *setZero(uint8_t node) {
 }
 
 const char *moveToPosition(uint8_t node, float targetPosition, bool relative, float speed, float accel) {
+	if (speed == 0.0) return moveWithVelocity(node, speed, accel, accel);
+	if (relative && speed < 0.0) {
+		targetPosition = -targetPosition;
+		speed = -speed;
+	}
+
 	Guard E(EPOS, node);
 
 	DEVLOG_DEBUG("EPOS moving by %g units at %g with acceleration %g\n", targetPosition, speed, accel);
