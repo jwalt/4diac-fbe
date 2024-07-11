@@ -59,9 +59,9 @@ replace() { # replace varname "foo" "bar"
 }
 
 update_forte_build_workaround() {
-    mkdir -p "${buildroot}/dependencies/recipes/forte/"
-    [ -f "${buildroot}/dependencies/recipes/forte/build.cmake" ] || cp "${basedir}/dependencies/recipes/forte/build.cmake" "${buildroot}/dependencies/recipes/forte/"
-    echo "$srcdir/ -X build.cmake" > "${buildroot}/dependencies/recipes/forte/package.txt"
+    mkdir -p "${extradepdir}/forte/"
+    [ -f "${extradepdir}/forte/build.cmake" ] || cp "${basedir}/dependencies/recipes/forte/build.cmake" "${extradepdir}/forte/"
+    echo "$srcdir/ -X build.cmake" > "${extradepdir}/forte/package.txt"
 }
 
 create_compile_commands_json() {
