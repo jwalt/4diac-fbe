@@ -14,4 +14,6 @@
 
 include=test-all.txt
 
-ARCH=aarch64-linux-musl
+ARCH=aarch64-apple-darwin20.2
+COM=-SER
+COM=-TSN

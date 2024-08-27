@@ -12,6 +12,15 @@
 //  *******************************************************************************/
 // 
 
-include=test-win.txt
+include=test-all.txt
 
 ARCH=x86_64-w64-mingw32
+
+// needs WinPcap
+DEPS=-openpowerlink
+MODULE=-POWERLINK
+// Linux only
+MODULE=-I2C_Dev
+
+// embrick is not supported on windows
+IO=
