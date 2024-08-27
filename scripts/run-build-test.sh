@@ -17,4 +17,7 @@ cd "$(dirname "$0")"/..
 ./scripts/compile.sh -k configurations/test/
 echo "____________________________________________________________________________"
 echo "Failed tests:"
+for i in build/test-*/; do
+	[ -f "${i%/}.log" ] || echo "Error in dependencies: $i"
+done
 tail -n 1 build/*.log | grep -B 1 "Exit Status: [^0]"

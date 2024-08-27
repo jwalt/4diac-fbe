@@ -16,20 +16,6 @@
 #include <windows.h>
 #include <ws2tcpip.h>
 
-// phony WSAPoll for WinXP
-struct pollfd {
-	int fd;
-	int events;
-};
-typedef struct pollfd* LPWSAPOLLFD;
-#define POLLWRNORM 0
-static inline int WSAPoll(struct pollfd *a, int b, int timeout)
-{
-	(void)a; (void)b;
-	Sleep(timeout);
-	return 1;
-}
-
 // from https://stackoverflow.com/a/20817001
 static int InetPton(int af, const char *src, void *dst)
 {
