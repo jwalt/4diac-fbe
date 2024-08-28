@@ -7,7 +7,7 @@
 # http://www.eclipse.org/legal/epl-2.0.
 #
 # SPDX-License-Identifier: EPL-2.0
-# 
+#
 # Contributors:
 #    Jörg Walter - initial implementation
 # *******************************************************************************/
@@ -18,23 +18,7 @@ cd "$(dirname "$0")"/..
 echo "____________________________________________________________________________"
 echo "Test results:"
 
-die() { echo "$*" >&2; exit 1; }
-run() {
-	case "$1" in
-		*.exe) wine "$@";;
-		*) "$@";;
-	esac
-}
-
 cd build
 for i in test-*/; do
-	(
-	i="${i%/}"
-	[ -f "$i.log" ] || die "Error in dependencies: $i"
-	tail -n 1 "$i.log" | grep -B 1 "Exit Status: [^0]" && die
-	run "$i"/output/bin/forte*  -f ../scripts/HelloWorld.fboot > "$i.out" 2>&1 || die "Could not execute $i forte"
-	mv helloworld.txt "$i.txt" || die "Forte $i did not run"
-       	grep "^'Hello World!';" "$i.txt" > /dev/null || die "Forte $i did not run correctly"
-	echo "$i: OK"
-	)
+	../scripts/test-basic-execution.sh "$i"
 done
