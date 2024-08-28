@@ -14,7 +14,7 @@
 #
 
 cd "$(dirname "$0")"/..
-./scripts/compile.sh -k configurations/test/
+./scripts/compile.sh "$@" configurations/test/
 echo "____________________________________________________________________________"
 echo "Test results:"
 
