@@ -25,7 +25,11 @@ trap '[ "$?" = 0 ] || die "Exiting due to error"' EXIT
 basedir="$(cd "$(dirname "$0")"; pwd)"
 buildroot="$PWD"
 [ -d "$basedir/scripts" ] || basedir="${basedir%/scripts}"
+
+[ -d "$basedir/toolchains" ] || exec "$(readlink -f "$0")" "$@"
+
 srcdir="$buildroot/4diac-forte/"
+[ -d "$srcdir" ] || srcdir="$buildroot/forte/"
 [ -d "$srcdir" ] || srcdir="$basedir/forte/"
 builddir="$buildroot/build"
 extradepdir="$buildroot/dependencies/recipes/"
@@ -41,6 +45,8 @@ fi
 
 export LANG=C
 export LC_ALL=C
+# make python-based code generators deterministic (e.g. open62541)
+export PYTHONHASHSEED=0
 export CGET_CACHE_DIR="$basedir/toolchains/download-cache"
 export CLICOLOR_FORCE=1
 
@@ -53,7 +59,9 @@ replace() { # replace varname "foo" "bar"
 }
 
 update_forte_build_workaround() {
-    echo "$srcdir/ -X build.cmake" > "${basedir}/dependencies/recipes/forte/package.txt"
+    mkdir -p "${extradepdir}/forte/"
+    [ -f "${extradepdir}/forte/build.cmake" ] || cp "${basedir}/dependencies/recipes/forte/build.cmake" "${extradepdir}/forte/"
+    echo "$srcdir/ -X build.cmake" > "${extradepdir}/forte/package.txt"
 }
 
 create_compile_commands_json() {
@@ -246,12 +254,13 @@ build_one() {
 		echo "Exit Status: $?"
 	) 2>&1 | tee "$prefix.log"
 	[ ! -f "$srcdir/__cget_sh_CMakeLists.txt" ] || mv "$srcdir/__cget_sh_CMakeLists.txt" "$srcdir/CMakeLists.txt"
+	"$basedir/toolchains/etc/package-dynamic.sh" "$target" "$prefix/output/bin/forte" || true
+
 	[ -z "$keep_going" ] || return 0
 	[ "$(tail -n 1 "$prefix.log")" = "Exit Status: 0" ] || die "Build of configuration '$config' failed"
 
 	create_compile_commands_json "$config"
 
-	"$basedir/toolchains/etc/package-dynamic.sh" "$target" "$prefix/output/bin/forte" || true
 	if [ -n "$deploy" ]; then
 		(
 			cd "$prefix"
@@ -269,7 +278,12 @@ verbose=
 generator=Ninja
 while [ -n "$1" ]; do
 	case "$1" in
-		-v) verbose="-v"; generator="Unix Makefiles"; export MAKEFLAGS=-j1; export NINJAFLAGS=-j1; set_define CMAKE_VERBOSE_MAKEFILE BOOL ON;; # export trace="set -x";;
+		-v) verbose="-v";
+			generator="Unix Makefiles";
+			export MAKEFLAGS=-j1;
+			export NINJAFLAGS=-j1;
+			export CMAKE_BUILD_PARALLEL_LEVEL=1;
+			set_define CMAKE_VERBOSE_MAKEFILE BOOL ON;;
 		-d) export trace="set -x";;
 		-c) compile_commands=1;;
 		-k) keep_going=1;;

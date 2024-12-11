@@ -12,8 +12,9 @@
 # *******************************************************************************/
 #
 
-project(FORTE CXX)
+project(forte CXX)
 cmake_minimum_required(VERSION 3.12)
+include(toolchain-utils)
 
 #############################################################################
 # Build Type
@@ -24,15 +25,22 @@ if (NOT CMAKE_BUILD_TYPE)
 endif()
 
 if (FORTE_ARCHITECTURE STREQUAL "FreeRTOSLwIP")
+  add_definitions("-Dfbe_startupHook=startupHook")
   find_package(freertos)
   set(FORTE_BUILD_EXECUTABLE OFF CACHE BOOL "" FORCE)
   set(FORTE_BUILD_STATIC_LIBRARY ON CACHE BOOL "" FORCE)
+elseif (TOOLCHAIN_ABI MATCHES "gnu")
+  add_link_options("-Wl,--wrap,initForte")
+  SET_PROPERTY(GLOBAL APPEND PROPERTY FORTE_SOURCE_C "${CGET_RECIPE_DIR}/dynamic-link-wrapper.c")
+  SET_PROPERTY(GLOBAL APPEND PROPERTY FORTE_SOURCE_C_GROUP ".")
+  set(FORTE_ARCHITECTURE "Posix" CACHE STRING "")
 elseif (UNIX)
   set(FORTE_ARCHITECTURE "Posix" CACHE STRING "")
 elseif (WIN32)
   set(FORTE_ARCHITECTURE "Win32" CACHE STRING "")
   set(FORTE_WINDOWS_XP_COMPAT ON CACHE BOOL "")
 else ()
+  add_definitions("-Dfbe_startupHook=startupHook")
   message(FATAL_ERROR "Unsupported target operating system.")
 endif ()
 

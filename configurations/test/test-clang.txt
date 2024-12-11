@@ -12,17 +12,6 @@
 //  *******************************************************************************/
 // 
 
-include=minimal.txt
+include=test-all.txt
 
-COM=ETH,FBDK,LOCAL,OPC_UA,PAHOMQTT,TSN,SER,HTTP
-
-MODULE=CONVERT,IEC61131,RT_Events,UTILS,CUSTOM_FBS
-FORTE_EXTERNAL_MODULES_DIRECTORY=${BASEDIR}/modules
-
-#FORTE_USE_LUATYPES=LuaJIT
-
-DEPS=libmodbus
-DEPS=open62541
-DEPS=paho.mqtt.c
-DEPS=tinyxml
-#DEPS=luajit
+ARCH=x86_64-unknown-linux-musl
