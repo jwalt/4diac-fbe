@@ -14,7 +14,6 @@ compile_commands.json
 /*.zip
 /dependencies/recipes/forte/package.txt
 /compile.sh
-/compile.cmd
 .gdbinit
 .gdb_history
 .cache
