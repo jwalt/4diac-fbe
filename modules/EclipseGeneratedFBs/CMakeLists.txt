@@ -15,8 +15,8 @@
 set_directory_properties(PROPERTIES CMAKE_CONFIGURE_DEPENDS generated)
 file(MAKE_DIRECTORY generated edited edited/original)
 
-file(GLOB gen RELATIVE ${CMAKE_CURRENT_SOURCE_DIR}/generated generated/*.cpp generated/*.h)
-file(GLOB edit RELATIVE ${CMAKE_CURRENT_SOURCE_DIR}/edited edited/*.cpp edited/*.h)
+file(GLOB_RECURSE gen RELATIVE ${CMAKE_CURRENT_SOURCE_DIR}/generated generated/*.cpp generated/*.h)
+file(GLOB_RECURSE edit RELATIVE ${CMAKE_CURRENT_SOURCE_DIR}/edited edited/*.cpp edited/*.h)
 
 # process new file dump if present
 if (NOT gen STREQUAL "")
@@ -68,7 +68,7 @@ if (NOT gen STREQUAL "")
 endif()
 
 # clean up orphaned original files
-file(GLOB edit_orig RELATIVE ${CMAKE_CURRENT_SOURCE_DIR}/edited/original edited/original/*.cpp edited/original/*.h)
+file(GLOB_RECURSE edit_orig RELATIVE ${CMAKE_CURRENT_SOURCE_DIR}/edited/original edited/original/*.cpp edited/original/*.h)
 foreach(src IN LISTS edit_orig)
   if (NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/edited/${src}")
 	message(STATUS "*!* Missing source file: ${src}, removing related data...")
@@ -80,7 +80,7 @@ endforeach()
 set(FORTE_MODULE_CUSTOM_FBS ON CACHE BOOL "")
 forte_add_module(CUSTOM_FBS ON "Custom FBs")
 
-file(GLOB CUSTOM_SRCS RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} edited/*.cpp)
+file(GLOB_RECURSE CUSTOM_SRCS RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} edited/*.cpp)
 
 foreach(CUSTOM_SRC IN LISTS CUSTOM_SRCS)
   string(REGEX REPLACE "\\.cpp" "" CUSTOM_SRC "${CUSTOM_SRC}")
