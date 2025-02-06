@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="automate" default="main">
+	<target name="main" >
+		<fordiac.importProject ProjectPath="${project}"/>
+		<fordiac.exportFolderFBs projectname="${projectname}" foldername="Type Library" ExportCMakeList="TRUE" ExportDirectory="${destination}" ExcludeSubfolder="Environment"/>
+	</target>
+</project>
